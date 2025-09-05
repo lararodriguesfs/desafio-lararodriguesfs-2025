@@ -11,6 +11,13 @@ class AbrigoAnimais {
       'Loco': {tipo: 'jabuti', brinquedos: ['SKATE', 'RATO']}
     }
   }
+
+
+encontrarPessoas(brinquedosPessoa1, brinquedosPessoa2, ordemAnimais) {
+   var pessoa1 = this.parseEntrada(brinquedosPessoa1);
+   var pessoa2 = this.parseEntrada(brinquedosPessoa2);
+   var ordem = this.parseEntrada(ordemAnimais);
+
 }
 
-export {AbrigoAnimais};
+}
