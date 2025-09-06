@@ -41,10 +41,10 @@ for (var j = 0; j < ordem.length; j++) {
   var pessoa10k = this.verificarOrdem(pessoa1, animal.brinquedos, animalNome);
   var pessoa20k = this.verificarOrdem(pessoa2, animal.brinquedos, animalNome);
 
-  var destino = animalNome + ' -abrigo';
+  var destino = animalNome + ' - abrigo';
 
   if (pessoa10k && !pessoa20k && adotadosPessoa1 < 3) {
-    destino = animalNome + ' -pessoa 1';
+    destino = animalNome + ' - pessoa 1';
     adotadosPessoa1++;
   }else if(pessoa10k && pessoa20k) {
     if(animal.tipo === 'gato') {
@@ -93,6 +93,35 @@ temDuplicados(array) {
       return true;
     }
     vistos[array[i]] = true;
+  }
+  return false;
+}
+
+verificarOrdem(brinquedosPessoa, brinquedosAnimal, animalNome) {
+  if (animalNome === 'Loco') {
+    for (var i = 0; i < brinquedosAnimal.length; i++) {
+      var tem = false;
+      for ( var j = 0; j < brinquedosPessoa.length; j++) {
+        if (brinquedosPessoa[j] === brinquedosAnimal[i]) {
+          tem = true;
+          break;
+        }
+      }
+      if (!tem) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  var index = 0;
+  for (var i = 0; i < brinquedosPessoa.length; i++){
+    if (brinquedosPessoa[i] === brinquedosAnimal[index]){
+      index++;
+    }
+    if (index === brinquedosAnimal.length) {
+      return true;
+    }
   }
   return false;
 }
