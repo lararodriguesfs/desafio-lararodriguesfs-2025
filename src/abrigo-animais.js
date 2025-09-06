@@ -86,6 +86,17 @@ parseEntrada(texto){
    return array;
 }
 
+temDuplicados(array) {
+  var vistos = {};
+  for (var i = 0; i < array.length; i++) {
+    if (vistos[array[i]]){
+      return true;
+    }
+    vistos[array[i]] = true;
+  }
+  return false;
+}
+
 }
 
 export { AbrigoAnimais as AbrigoAnimais};
