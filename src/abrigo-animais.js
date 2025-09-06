@@ -70,6 +70,22 @@ for (var j = 0; j < ordem.length; j++) {
   return {lista : resultado};
 }
 
+parseEntrada(texto){
+  var array = [];
+  var tempo = '';
+
+  for (var i = 0; i < texto.length; i++) {
+    if(texto[i] === ',') {
+      array.push(tempo);
+      tempo = '';
+    } else {
+      tempo += texto[i];
+    }
+  }
+   array.push(tempo);
+   return array;
+}
+
 }
 
 export { AbrigoAnimais as AbrigoAnimais};
