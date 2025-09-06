@@ -38,11 +38,46 @@ for (var j = 0; j < ordem.length; j++) {
     return {erro: 'Animal inválido'};
   }
 
+  var pessoa10k = this.verificarOrdem(pessoa1, animal.brinquedos, animalNome);
+  var pessoa20k = this.verificarOrdem(pessoa2, animal.brinquedos, animalNome);
+
+  var destino = animalNome + ' -abrigo';
+
+  if (pessoa10k && !pessoa20k && adotadosPessoa1 < 3) {
+    destino = animalNome + ' -pessoa 1';
+    adotadosPessoa1++;
+  }else if(pessoa10k && pessoa20k) {
+    if(animal.tipo === 'gato') {
+      destino = animalNome + ' - abrigo';
+    }else if(animalNome === 'Loco') {
+      if (adotadosPessoa1 > 0 && adotadosPessoa1 < 3) {
+        destino = animalNome + ' - pessoa 1';
+        adotadosPessoa1++;
+      } else if (adotadosPessoa2 > 0 && adotadosPessoa2 < 3) {
+        destino = animalNome + ' - pessoa 2';
+        adotadosPessoa2++;
+      }else {
+        destino = animalNome + ' - abrigo';
+      }
+    } else {
+      destino = animalNome + ' - abrigo';
+    }
+ 
+  }
+  resultado.push(destino);
+  }
+
+  return {lista : resultado};
 }
 
 }
 
-}
+export { AbrigoAnimais as AbrigoAnimais};
+
+
+
+
+
 
 
 
