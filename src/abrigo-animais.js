@@ -38,7 +38,6 @@ class AbrigoAnimais {
 
       var destino = animalNome + ' - abrigo';
 
-      // regra Loco
       if (animalNome === 'Loco') {
         if (podePessoa1 && adotadosPessoa1 < 3) {
           destino = animalNome + ' - pessoa 1';
